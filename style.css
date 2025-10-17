@@ -245,3 +245,86 @@
     }
     }
 
+/* form */
+/* CONTACT FORM */
+.contact-form{
+  --bg: #fff;
+  --bd: #e6e8eb;
+  --fg: #0f1a22;
+  --focus: var(--teal);
+  --accent: var(--coral);
+
+  background: var(--bg);
+  border: 1px solid var(--bd);
+  border-radius: 12px;
+  padding: 1.25rem;
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 1fr;       /* mobile: single column */
+  max-width: 820px;
+}
+
+.contact-form label{
+  display: grid;
+  gap: .4rem;
+  font-weight: 600;
+  color: var(--fg);
+}
+
+.contact-form input,
+.contact-form textarea{
+  font: inherit;
+  color: var(--fg);
+  background: #fff;
+  border: 2px solid var(--bd);
+  border-radius: 10px;
+  padding: .8rem .9rem;
+  outline: none;
+  transition: border-color .15s ease, box-shadow .15s ease, background-color .15s ease;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder{ color: #8a97a3; }
+
+.contact-form input:focus-visible,
+.contact-form textarea:focus-visible{
+  border-color: var(--focus);
+  box-shadow: 0 0 0 .2rem color-mix(in oklab, var(--focus) 25%, transparent);
+}
+
+/* required/invalid hints (native browser validation) */
+.contact-form input:required:user-invalid,
+.contact-form textarea:required:user-invalid{
+  border-color: var(--darkred);
+  background: color-mix(in oklab, #fff 92%, var(--darkred) 8%);
+}
+
+/* layout: make message full width & button align right on wide screens */
+.contact-form .full{ grid-column: 1 / -1; }
+
+@media (min-width: 700px){
+  .contact-form{
+    grid-template-columns: 1fr 1fr; /* two columns */
+    padding: 1.5rem;
+  }
+  .contact-form button{
+    justify-self: start;            /* left on mobile */
+  }
+}
+
+@media (min-width: 900px){
+  .contact-form button{
+    justify-self: end;              /* right align on large screens */
+  }
+}
+
+/* Button tweak so it feels clickable inside a white card */
+.contact-form .btn{
+  border: 2px solid var(--accent);
+  background: var(--accent);
+  color: #fff;
+  padding: .8rem 1.2rem;
+  border-radius: 10px;
+  font-weight: 800;
+}
+.contact-form .btn:hover{ filter: brightness(.95); }

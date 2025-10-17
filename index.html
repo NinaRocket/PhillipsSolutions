@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Handyman in Phoenix, AZ | Phillips Solutions & Improvements (PSI)</title>
+  <title>PSI • Phillips Solutions & Improvements</title>
   <link rel="icon" href="assets/handyman_logo.png">
   <meta name="description" content="PSI provides reliable handyman services in Phoenix, AZ: drywall, flooring, plumbing, electrical, painting, and more. Licensed, insured, free estimates.">
 
@@ -89,7 +89,7 @@
   <div class="container wrap">
     <div>
       <span class="badge">Fast • Reliable • Local</span>
-      <h1>Trusted Handyman Services in Phoenix, AZ</h1>
+      <h1>PSI • Phillips Solutions & Improvements LLC</h1>
       <p>We repair, install and fix shit!</p>
       <div class="actions">
         <a class="btn" href="#contact">Get a Free Estimate</a>
@@ -102,6 +102,7 @@
 
     <!-- SERVICES PREVIEW (inspiration site shows tiled services) -->
     <section class="container">
+       <a class="anchor" name="services"></a>
       <h2 class="section-title">Popular Services</h2>
       <div class="grid cards">
         <article class="card">
@@ -135,22 +136,45 @@
     <section class="container">
       <h2 class="section-title">What Our Clients Say</h2>
       <div class="testimonial">
-        “PSI handled drywall and a leaky faucet the same day. Clean, friendly, and fair pricing.” — <strong>Jakob T., Phoenix</strong>
+        “PSI put together my lego shelf and repaired a broken stair I had. Clean and friendly!” — <strong>Nina Rocket, Phoenix</strong>
       </div>
     </section>
 
     <!-- CONTACT -->
-    <section id="contact" class="container">
-      <h2 class="section-title">Ready to Get Started?</h2>
-      <p>Call <a href="tel:+16024287276">(602) 428-7276</a> or send a message below.</p>
-      <form action="/api/contact" method="post" class="grid" style="grid-template-columns:repeat(auto-fit,minmax(240px,1fr))">
-        <input name="name" placeholder="Name" required>
-        <input name="phone" placeholder="Phone" required>
-        <input name="email" type="email" placeholder="Email">
-        <textarea name="message" placeholder="Tell us about the project…" rows="5" style="grid-column:1/-1"></textarea>
-        <button class="btn" type="submit">Send Message</button>
-      </form>
-    </section>
+       <a class="anchor" name="contact"></a>
+<section id="contact" class="container">
+  <h2 class="section-title">Ready to Get Started?</h2>
+  <p>Call <a href="tel:+16024287276">(602) 428-7276</a> or send a message below.</p>
+
+  <form class="contact-form"
+        name="contact"
+        method="POST"
+        action="/thank-you.html"
+        data-netlify="true"
+        netlify-honeypot="bot-field">
+    <input type="hidden" name="form-name" value="contact">
+    <p hidden><label>Don’t fill this out: <input name="bot-field"></label></p>
+
+    <label>
+      <span>Name</span>
+      <input name="name" required autocomplete="name">
+    </label>
+
+    <label>
+      <span>Email</span>
+      <input type="email" name="email" autocomplete="email">
+    </label>
+
+    <label class="full">
+      <span>Message</span>
+      <textarea name="message" rows="6" required></textarea>
+    </label>
+<div data-netlify-recaptcha="true"></div>
+
+    <button type="submit" class="btn">Send</button>
+  </form>
+</section>
+
   </main>
 
   <footer>
@@ -161,11 +185,12 @@
         <a href="tel:+16024287276">(602) 428-7276</a> • <a href="mailto:mphillips@fixitpsi.com">mphillips@fixitpsi.com</a><br>
         By appointment only.
       </div>
+  
       <div>
         <strong>Quick Links</strong><br>
-        <a href="/services/">Services</a><br>
-        <a href="/work/">Our Work</a><br>
-        <a href="/contact/">Contact</a>
+        <a href="#services">Services</a><br>
+        <!-- <a href="/work/">Our Work</a><br> -->
+        <a href="#contact">Contact</a>
       </div>
       <div>
         <strong>Service Areas</strong><br>
