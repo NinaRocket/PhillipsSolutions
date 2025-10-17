@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Handyman in Phoenix, AZ | Phillips Solutions & Improvements (PSI)</title>
+  <link rel="icon" href="assets/handyman_logo.png">
+  <meta name="description" content="PSI provides reliable handyman services in Phoenix, AZ: drywall, flooring, plumbing, electrical, painting, and more. Licensed, insured, free estimates.">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Trusted Handyman in Phoenix – PSI">
+  <meta property="og:description" content="Reliable home repairs & upgrades. Free estimates.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://example.com/">
+  <meta property="og:image" content="https://example.com/og-image.jpg">
+
+  <!-- Brand font (optional) -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+ 
+  <!-- JSON-LD: LocalBusiness + a couple of Services + FAQPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HomeAndConstructionBusiness",
+    "name": "Phillips Solutions & Improvements LLC",
+    "image": "https://example.com/psi-logo.png",
+    "url": "https://example.com",
+    "telephone": "(602) 428-7276",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "[Street]",
+      "addressLocality": "Phoenix",
+      "addressRegion": "AZ",
+      "postalCode": "[ZIP]",
+      "addressCountry": "US"
+    },
+    "areaServed": ["Phoenix AZ","[Nearby Phoenix] AZ","[Zip1]","[Zip2]"],
+    "serviceType": "Handyman",
+    "priceRange": "$$",
+    "openingHours": "Mo-Fr 08:00-18:00",
+    "sameAs": ["https://www.instagram.com/yourhandle"],
+    "makesOffer": [{
+      "@type":"Offer",
+      "itemOffered": {"@type":"Service","name":"Drywall Repair"}
+    },{
+      "@type":"Offer",
+      "itemOffered": {"@type":"Service","name":"Flooring & Tile"}
+    }]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [{
+      "@type": "Question",
+      "name": "Do you offer free estimates?",
+      "acceptedAnswer": {"@type":"Answer","text":"Yes—free, no-obligation estimates. Send a few photos and your ZIP for faster turnaround."}
+    },{
+      "@type": "Question",
+      "name": "Are you licensed and insured?",
+      "acceptedAnswer": {"@type":"Answer","text":"Yes. We are fully insured and happy to share documentation upon request."}
+    }]
+  }
+  </script>
+</head>
+
+<body>
+  <header>
+    <div class="container nav">
+      <div class="brand">
+        <!-- swap to the PSI card front if you like -->
+        <img src="/assets/handyman_logo.png" alt="PSI handyman logo">
+        <div class="name">PSI • Phillips Solutions & Improvements LLC</div>
+      </div>
+      <div class="cta-phone">
+        <a href="tel:+16024287276">Call (602) 428-7276</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+<section class="hero">
+  <div class="container wrap">
+    <div>
+      <span class="badge">Fast • Reliable • Local</span>
+      <h1>Trusted Handyman Services in Phoenix, AZ</h1>
+      <p>We repair, install and fix shit!</p>
+      <div class="actions">
+        <a class="btn" href="#contact">Get a Free Estimate</a>
+        <a class="btn btn-outline" href="#services">Explore Services</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+    <!-- SERVICES PREVIEW (inspiration site shows tiled services) -->
+    <section class="container">
+      <h2 class="section-title">Popular Services</h2>
+      <div class="grid cards">
+        <article class="card">
+          <h3><a href="/services/drywall-repair/">Repairs</a></h3>
+          <p>Lorem Ipsum sample text.</p>
+        </article>
+        <article class="card">
+          <h3><a href="/services/flooring-tile/">Replacements</a></h3>
+          <p>Lorem Ipsum sample text.</p>
+        </article>
+        <article class="card">
+          <h3><a href="/services/painting/">Installations</a></h3>
+          <p>Lorem Ipsum sample text.</p>
+        </article>
+        <article class="card">
+          <h3><a href="/services/plumbing/">Assembly</a></h3>
+          <p>Lorem Ipsum sample text.</p>
+        </article>
+        <article class="card">
+          <h3><a href="/services/electrical/">And More!</a></h3>
+          <p>Lorem Ipsum sample text.</p>
+        </article>
+        <!-- <article class="card">
+          <h3><a href="/services/exterior/">Exterior &amp; Stucco</a></h3>
+          <p>Minor stucco repair, caulking, weatherproofing.</p>
+        </article> -->
+      </div>
+    </section>
+
+    <!-- TESTIMONIAL -->
+    <section class="container">
+      <h2 class="section-title">What Our Clients Say</h2>
+      <div class="testimonial">
+        “PSI handled drywall and a leaky faucet the same day. Clean, friendly, and fair pricing.” — <strong>Jakob T., Phoenix</strong>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="container">
+      <h2 class="section-title">Ready to Get Started?</h2>
+      <p>Call <a href="tel:+16024287276">(602) 428-7276</a> or send a message below.</p>
+      <form action="/api/contact" method="post" class="grid" style="grid-template-columns:repeat(auto-fit,minmax(240px,1fr))">
+        <input name="name" placeholder="Name" required>
+        <input name="phone" placeholder="Phone" required>
+        <input name="email" type="email" placeholder="Email">
+        <textarea name="message" placeholder="Tell us about the project…" rows="5" style="grid-column:1/-1"></textarea>
+        <button class="btn" type="submit">Send Message</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-cols">
+      <div>
+        <strong>PSI • Phillips Solutions & Improvements LLC</strong><br>
+        Phoenix, AZ<br>
+        <a href="tel:+16024287276">(602) 428-7276</a> • <a href="mailto:mphillips@fixitpsi.com">mphillips@fixitpsi.com</a><br>
+        By appointment only.
+      </div>
+      <div>
+        <strong>Quick Links</strong><br>
+        <a href="/services/">Services</a><br>
+        <a href="/work/">Our Work</a><br>
+        <a href="/contact/">Contact</a>
+      </div>
+      <div>
+        <strong>Service Areas</strong><br>
+        <a href="/service-areas/phoenix-handyman/">Phoenix</a><br>
+        <a href="/service-areas/scottsdale-handyman/">Scottsdale</a><br>
+        <a href="/service-areas/tempe-handyman/">Tempe</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
