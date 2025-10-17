@@ -419,6 +419,7 @@
     letter-spacing: .04em;        /* avoid 5px; use relative units */
     line-height: 1.02;
     margin: .2rem 0 .3rem;
+    padding-top: 3px;
   }
 
   /* Subhead line */
@@ -444,7 +445,7 @@
 @media (min-width: 700px){
   .hero .wrap{ padding: 2rem 0; }
   .hero h1{ font-size: clamp(3rem, 6vw, 4rem); letter-spacing: .03em; }
-  .hero h2{ font-family: "League Gothic", sans-serif; font-size: clamp(1.6rem, 3.5vw, 2.6rem); letter-spacing: .05em; }
+  .hero h2{ font-family: "League Gothic", sans-serif; font-size: clamp(1.6rem, 3.5vw, 2.6rem); letter-spacing: .05em; margin: 0 0 .6rem;}
 }
 
 /* Optional: keep the copy from getting too wide (nice for all screens) */
@@ -455,14 +456,28 @@
   display:none;
   position:absolute;
   right: clamp(10px, 4vw, 16px);
-  bottom: clamp(10px, 4vw, 16px);
-  width: clamp(72px, 20vw, 120px);
+  /* bottom: clamp(10px, 4vw, 16px); */
+  top: clamp(10px, 4vw, 16px);
+  width: clamp(72px, 30vw, 120px);
   height:auto;
   z-index: 1;                  /* above ::before/::after */
   pointer-events: none;        /* don't block button taps */
   filter: drop-shadow(0 4px 10px rgba(0,0,0,.25));
 }
-
+@media(max-width:395px){
+    .hero-corner-logo{
+          display:none;
+  position:absolute;
+  right: clamp(10px, 4vw, 16px);
+  bottom: clamp(10px, 4vw, 16px) !important;
+  top: auto;
+  width: clamp(72px, 30vw, 120px);
+  height:auto;
+  z-index: 1;                  /* above ::before/::after */
+  pointer-events: none;        /* don't block button taps */
+  filter: drop-shadow(0 4px 10px rgba(0,0,0,.25));
+    }
+}
 /* Show on mobile only */
 @media (max-width: 699px){
   .hero-corner-logo{ display:block; }
