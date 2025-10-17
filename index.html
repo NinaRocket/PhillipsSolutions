@@ -16,6 +16,11 @@
   <meta property="og:image" content="https://example.com/og-image.jpg">
 
   <!-- Brand font (optional) -->
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Great+Vibes&family=League+Gothic&family=Pinyon+Script&family=Playwrite+US+Trad:wght@100..400&family=Shrikhand&family=Tangerine:wght@400;700&display=swap" rel="stylesheet">
+
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
@@ -75,7 +80,7 @@
       <div class="brand">
         <!-- swap to the PSI card front if you like -->
         <img src="/assets/handyman_logo.png" alt="PSI handyman logo">
-        <div class="name">PSI • Phillips Solutions & Improvements LLC</div>
+        <div class="name">PSI</div> <span>Phillips Solutions & Improvements LLC</span>
       </div>
       <div class="cta-phone">
         <a href="tel:+16024287276">Call (602) 428-7276</a>
@@ -86,10 +91,12 @@
   <main>
     <!-- HERO -->
 <section class="hero">
+  <img class="hero-corner-logo" src="/assets/handyman_logo.png" alt="">
   <div class="container wrap">
     <div>
       <span class="badge">Fast • Reliable • Local</span>
-      <h1>PSI • Phillips Solutions & Improvements LLC</h1>
+      <h1>PSI</h1> 
+      <h2>Phillips Solutions & Improvements LLC</h2> 
       <p>We repair, install and fix shit!</p>
       <div class="actions">
         <a class="btn" href="#contact">Get a Free Estimate</a>
@@ -101,34 +108,71 @@
 
 
     <!-- SERVICES PREVIEW (inspiration site shows tiled services) -->
+      <a class="anchor" name="services"></a>
     <section class="container">
-       <a class="anchor" name="services"></a>
+      
       <h2 class="section-title">Popular Services</h2>
       <div class="grid cards">
-        <article class="card">
-          <h3><a href="/services/drywall-repair/">Repairs</a></h3>
-          <p>Lorem Ipsum sample text.</p>
-        </article>
-        <article class="card">
-          <h3><a href="/services/flooring-tile/">Replacements</a></h3>
-          <p>Lorem Ipsum sample text.</p>
-        </article>
-        <article class="card">
-          <h3><a href="/services/painting/">Installations</a></h3>
-          <p>Lorem Ipsum sample text.</p>
-        </article>
-        <article class="card">
-          <h3><a href="/services/plumbing/">Assembly</a></h3>
-          <p>Lorem Ipsum sample text.</p>
-        </article>
-        <article class="card">
-          <h3><a href="/services/electrical/">And More!</a></h3>
-          <p>Lorem Ipsum sample text.</p>
-        </article>
-        <!-- <article class="card">
-          <h3><a href="/services/exterior/">Exterior &amp; Stucco</a></h3>
-          <p>Minor stucco repair, caulking, weatherproofing.</p>
-        </article> -->
+        <article class="card card--center-icon">
+  <div class="card-icon">
+    <img
+      src="/assets/hand.png"
+     
+      width="40" height="40" alt=""
+      loading="eager" decoding="async">
+  </div>
+  <h3>Repairs</h3>
+  <p>Lorem Ipsum sample text.</p>
+</article>
+
+<article class="card card--center-icon">
+  <div class="card-icon">
+    <img
+      src="/assets/light.png"
+  
+      width="40" height="40" alt=""
+      loading="lazy" decoding="async">
+  </div>
+  <h3>Replacements</h3>
+  <p>Lorem Ipsum sample text.</p>
+</article>
+
+<article class="card card--center-icon">
+  <div class="card-icon">
+    <img
+      src="/assets/ladder.png"
+  
+      width="40" height="40" alt=""
+      loading="lazy" decoding="async">
+  </div>
+  <h3>Installations</h3>
+  <p>Lorem Ipsum sample text.</p>
+</article>
+
+<article class="card card--center-icon">
+  <div class="card-icon">
+    <img
+      src="/assets/drawer.png"
+     
+      width="40" height="40" alt=""
+      loading="lazy" decoding="async">
+  </div>
+  <h3>Assembly</h3>
+  <p>Lorem Ipsum sample text.</p>
+</article>
+
+<article class="card card--center-icon">
+  <div class="card-icon">
+    <img
+      src="/assets/cog.png"
+  
+      width="40" height="40" alt=""
+      loading="lazy" decoding="async">
+  </div>
+  <h3>And More!</h3>
+  <p>Contact us to see how we can help!</p>
+</article>
+
       </div>
     </section>
 
@@ -136,7 +180,7 @@
     <section class="container">
       <h2 class="section-title">What Our Clients Say</h2>
       <div class="testimonial">
-        “PSI put together my lego shelf and repaired a broken stair I had. Clean and friendly!” — <strong>Nina Rocket, Phoenix</strong>
+        “PSI assembled my lego shelf and repaired a broken stair. Clean, fast and friendly!” — <strong>Nina Rocket, Phoenix</strong>
       </div>
     </section>
 

@@ -38,7 +38,7 @@
         display:flex;
         align-items:center;
         justify-content:space-between;
-        padding:.85rem 0;
+        padding:.85rem;
     }
     .brand{
         display:flex;
@@ -50,7 +50,9 @@
         width:auto;
     }
     .brand .name{
+        font-family: "Shrikhand", serif;
         font-weight:800;
+        font-size:28px;
         letter-spacing:.5px;
     }
     .cta-phone a{
@@ -76,81 +78,76 @@
     }
     /* hero */
 /* HERO as a responsive background */
+/* HERO (mobile-first) */
 .hero{
-  /* default (mobile) image */
-  --hero-img: url('/assets/PSI-4.png');
+  /* default for <700px */
+  --hero-img: url('/assets/PSI_noman.png');   /* << mobile image */
   position: relative;
   color: #fff;
-  min-height: 56svh;               /* nice tall hero on phones */
+  min-height: 56svh;
   display: grid;
   align-items: center;
   padding: 25px;
-  overflow: clip;                   /* hides edges on iOS */
+  overflow: clip;
 }
 
-/* the background image */
+/* paint the image on the pseudo-element */
 .hero::before{
   content:"";
   position:absolute; inset:0;
   background-image: var(--hero-img);
   background-size: cover;
-  background-position: 0% 50%;      /* tweak focal point: e.g. 50% 35% */
+  background-position: 0% 50%;   /* keep the stripes in view on phones */
   background-repeat: no-repeat;
   z-index: 0;
 }
 
-/* gradient overlay for readability using brand colors */
+/* gradient overlay */
 .hero::after{
   content:"";
   position:absolute; inset:0;
-  background: linear-gradient(135deg, color-mix(in oklab, var(--teal) 75%, transparent), color-mix(in oklab, var(--darkred) 55%, transparent));
-  mix-blend-mode: multiply;         /* deepen image but keep color */
-  opacity: .5;                     /* adjust to taste */
+  background: linear-gradient(
+    135deg,
+    color-mix(in oklab, var(--teal) 75%, transparent),
+    color-mix(in oklab, var(--darkred) 55%, transparent)
+  );
+  mix-blend-mode: multiply;
+  opacity: .5;
   z-index: 0;
 }
 
-/* keep text above bg */
+/* content above bg */
 .hero > .container{ position: relative; z-index: 1; }
-
-/* tighten the text layout now that we removed the image column */
 .hero .wrap{ display:block; }
 
-/* swap images at breakpoints */
+/* swap to desktop image at ≥700px */
 @media (min-width: 700px){
-  .hero{ min-height: 50svh; }
-  .hero{ --hero-img: url('/assets/PSI-4.png'); }
+  .hero{
+    --hero-img: url('/assets/PSI_hero1.png');  /* << tablet/desktop image */
+    min-height: 50svh;
+  }
+  /* optional: recentre the crop on wider screens */
+  .hero::before{ background-position: 35% 45%; }
 }
 
+/* taller on wide desktops */
 @media (min-width: 1100px){
   .hero{ min-height: 60svh; }
-  .hero{ --hero-img: url('/assets/PSI-4.png'); }
+  .hero::before{ background-position: 50% 45%; }
 }
 
-/* optional: higher-DPR versions using image-set */
+/* OPTIONAL retina handling – only if you have true @2x assets
 @supports (background-image: image-set(url('x') 1x)){
   .hero::before{
     background-image: image-set(
-      url('/assets/PSI-4.png') 1x,
-      url('/assets/PSI-4.png') 2x
+      var(--hero-img) 1x,
+      var(--hero-img) 2x
     );
   }
-  @media (min-width:700px){
-    .hero::before{
-      background-image: image-set(
-        url('/assets/PSI-4.png') 1x,
-        url('/assets/PSI-4.png') 2x
-      );
-    }
-  }
-  @media (min-width:1100px){
-    .hero::before{
-      background-image: image-set(
-        url('/assets/PSI-4.png') 1x,
-        url('/assets/PSI-4.png') 2x
-      );
-    }
-  }
 }
+*/
+
+
 
 /* data saver: use a subtle color fill when users prefer reduced data */
 @media (prefers-reduced-data: reduce){
@@ -171,9 +168,12 @@
         padding:3.5rem 0;
     }
     .hero h1{
-        font-size:clamp(1.8rem,3vw,3rem);
+        font-family: "Shrikhand", serif;
+        font-size:clamp(4.8rem,3vw,3rem);
+        letter-spacing: 5px;
         margin:0 0 .5rem;
     }
+
     .hero p{
         opacity:.95;
     }
@@ -207,6 +207,7 @@
     }
     .card h3{
         margin:.25rem 0 .5rem;
+        color: var(--teal);
     }
     .badge{
         display:inline-block;
@@ -328,3 +329,141 @@
   font-weight: 800;
 }
 .contact-form .btn:hover{ filter: brightness(.95); }
+
+
+/* card layout already exists; just add the icon styles */
+/* .card .card-icon{
+  --badge-bg: #ffa51f1c;
+  --badge-bd: var(--darkred);
+
+  width: 56px;
+  height: 56px;
+  border-radius: 14px;
+  background: #ffa51f1c;
+  border: 2px solid var(--badge-bd);
+  display: grid;
+  place-items: center;
+  margin-bottom: .35rem;
+  box-shadow: 0 6px 14px rgba(0,0,0,.06);
+}
+
+.card .card-icon img{
+  display: block;
+  width: 40px;   
+  height: 40px;
+  object-fit: contain; 
+} */
+ /* shared icon badge */
+.card .card-icon{
+  width:56px;height:56px;border-radius:14px;
+  /* background: var(--orange); */
+  display:grid;place-items:center;
+  box-shadow:0 6px 14px rgba(0,0,0,.06);
+  /* border:2px solid color-mix(in oklab, var(--coral) 70%, #000 0%); */
+  border: 1px solid var(--darkred);
+}
+.card .card-icon img{width:40px;height:40px;object-fit:contain;display:block}
+
+/* A) centered */
+.card--center-icon{
+  text-align:center;
+  display:grid;align-content:start;gap:.4rem;
+}
+.card--center-icon .card-icon{margin:.25rem auto .25rem;}
+.card--center-icon h3{margin:.1rem 0 .25rem;color:var(--teal);}
+
+
+/* optional: per-card accent colors (if you want variety) */
+/* .card.-teal .card-icon{ --badge-bg: var(--teal); }
+.card.-coral .card-icon{ --badge-bg: var(--coral); }
+.card.-red   .card-icon{ --badge-bg: var(--darkred); } */
+
+/* subtle hover lift */
+.cards .card{transition:transform .15s, box-shadow .15s}
+.cards .card:hover{transform:translateY(-2px);box-shadow:0 10px 22px rgba(0,0,0,.06)}
+
+/* compact card spacing */
+.cards .card h3{font-weight:800}
+.cards .card p{color:#3a4a58}
+
+/* hybrid: center on small, right on ≥700px */
+.card.card--responsive{ text-align:center; display:grid; gap:.4rem; }
+.card.card--responsive .card-icon{ margin:.25rem auto; }
+@media (min-width:700px){
+  .card.card--responsive{
+    text-align:initial;
+    grid-template-columns:1fr auto; align-items:start;
+  }
+  .card.card--responsive .card-icon{ margin:0; justify-self:end; }
+  .card.card--responsive p{ grid-column:1 / -1; }
+}
+
+.card p{
+    margin-top: 0;
+}
+
+/* --- HERO: mobile sizing + spacing fix --- */
+@media (max-width: 699px){
+  .hero{
+    min-height: 46svh;            /* was 56svh */
+    padding: 16px;                /* was 25px */
+  }
+  .hero .wrap{
+    padding: 10px 0;              /* was 3.5rem */
+  }
+
+  /* BIG title "PSI" */
+  .hero h1{
+    /* clamp(min, preferred, max)  -> min <= max */
+    font-size: clamp(2.2rem, 10vw, 3rem);
+    letter-spacing: .04em;        /* avoid 5px; use relative units */
+    line-height: 1.02;
+    margin: .2rem 0 .3rem;
+  }
+
+  /* Subhead line */
+  .hero h2{
+    font-family: "League Gothic", sans-serif;
+    font-size: clamp(1.3rem, 6.5vw, 2rem);
+    letter-spacing: .06em;
+    line-height: 1.1;
+    margin: 0 0 .6rem;
+  }
+
+  .hero p{
+    margin: 0 0 .7rem;
+  }
+
+  .hero .actions{
+    gap: .5rem;
+    margin-top: .5rem;
+  }
+}
+
+/* Tidy tablet/desktop scale so it doesn’t get silly there either */
+@media (min-width: 700px){
+  .hero .wrap{ padding: 2rem 0; }
+  .hero h1{ font-size: clamp(3rem, 6vw, 4rem); letter-spacing: .03em; }
+  .hero h2{ font-family: "League Gothic", sans-serif; font-size: clamp(1.6rem, 3.5vw, 2.6rem); letter-spacing: .05em; }
+}
+
+/* Optional: keep the copy from getting too wide (nice for all screens) */
+.hero .container > div{ max-width: 40rem; }
+
+/* Hidden by default */
+.hero-corner-logo{
+  display:none;
+  position:absolute;
+  right: clamp(10px, 4vw, 16px);
+  bottom: clamp(10px, 4vw, 16px);
+  width: clamp(72px, 20vw, 120px);
+  height:auto;
+  z-index: 1;                  /* above ::before/::after */
+  pointer-events: none;        /* don't block button taps */
+  filter: drop-shadow(0 4px 10px rgba(0,0,0,.25));
+}
+
+/* Show on mobile only */
+@media (max-width: 699px){
+  .hero-corner-logo{ display:block; }
+}
